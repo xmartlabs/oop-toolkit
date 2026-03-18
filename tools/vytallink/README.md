@@ -18,7 +18,7 @@ For hackathon participants, this means **instant access to real health data** wi
 
 ### Option A: No-code (ChatGPT)
 
-1. Install the VytalLink app ([iOS](https://apps.apple.com/uy/app/vytallink/id6752308627) / [Android](https://play.google.com/))
+1. Install the VytalLink app ([iOS](https://apps.apple.com/uy/app/vytallink/id6752308627) / [Android](https://play.google.com/store/apps/details?id=com.xmartlabs.vytallink&hl=en))
 2. Connect your health data source (Apple Health or Google Fit)
 3. Tap **"Get Word + PIN"** in the app to generate your credentials (e.g. `HEALTH7` + `sunset42`)
 4. Open ChatGPT and search for the **"vytalLink"** GPT
@@ -111,6 +111,6 @@ The AI pulls heart rate and workout data, then produces the comparison — no ma
 
 - [VytalLink Website](https://vytallink.xmartlabs.com/)
 - [MCP Setup Guide](https://vytallink.xmartlabs.com/mcp-setup.html)
-- [iOS App](https://apps.apple.com/) / [Android App](https://play.google.com/)
+- [iOS App](https://apps.apple.com/) / [Android App](https://play.google.com/store/apps/details?id=com.xmartlabs.vytallink&hl=en)
 - [Blog: Introducing VytalLink — Making Real Sense of Your Wearable Data](https://blog.xmartlabs.com/blog/vytallink-app/)
 - [Blog: Build a Local Health Data Server on Your Phone with Flutter + MCP](https://blog.xmartlabs.com/blog/blog-building-health-apps-mcp-llms/)
