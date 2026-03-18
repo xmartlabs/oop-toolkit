@@ -2,75 +2,56 @@
 
 ## What is it
 
-VytalLink is a mobile app that connects your wearable devices and health apps (Apple Health, Google Fit) to AI assistants like ChatGPT and Claude. It lets you query your own health data using natural language — **no coding required** to get started, but fully extensible for developers via MCP, REST API, and WebSocket.
+VytalLink is a health data integration platform that connects wearable devices and health apps to AI assistants and developer tools.
+
+It ships as a mobile app that acts as the data bridge — running on the user's phone, reading from their health sources, and exposing that data via MCP, REST API, and WebSocket. No cloud storage, no data pipelines to build, no wearable SDKs to reverse-engineer, **no code required**.
 
 ## How it works
 
 ![VytalLink high-level architecture](https://blog.xmartlabs.com/images/frame-2.png)
 
-## What problem does it solve
+## Why VytalLink?
 
-Getting health data out of wearables and into a usable format is painful. Each device has its own app, its own export format, and its own limitations. VytalLink acts as a bridge: it reads from your health sources and exposes that data to AI assistants so you can ask things like *"How was my sleep this week?"* or *"Show me my heart rate trends during workouts"* — without writing a single API call or data pipeline.
+Healthcare projects live or die on data. Your wearables might capture blood oxygen, track movement, or monitor health rate but that data needs to go somewhere useful, fast.
 
-For hackathon participants, this means **instant access to real health data** without needing to reverse-engineer wearable APIs or build data ingestion pipelines from scratch.
+The typical path is painful: parse device outputs, normalize formats across platforms, build ingestion pipelines, wire up an API. That's days of work before you even touch your actual idea.
+
+VytalLink skips all of that. It already speaks Apple Health and Google Fit, exposes your health data through MCP and REST, and integrates natively with Claude and ChatGPT. You plug in and start building the thing that matters.
 
 ## Quickstart
 
-### Option A: No-code (ChatGPT)
+### Step 1: Get your credentials
 
-1. Install the VytalLink app ([iOS](https://apps.apple.com/uy/app/vytallink/id6752308627) / [Android](https://play.google.com/store/apps/details?id=com.xmartlabs.vytallink&hl=en))
+1. Install the VytalLink app (iOS / Android)
 2. Connect your health data source (Apple Health or Google Fit)
-3. Tap **"Get Word + PIN"** in the app to generate your credentials (e.g. `HEALTH7` + `sunset42`)
-4. Open ChatGPT and search for the **"vytalLink"** GPT
-5. Paste your credentials when prompted
-6. Start asking questions about your health data
+3. Tap "Get Word + PIN" in the app — you'll receive a credential pair (e.g. HEALTH7 + sunset42)
 
-### Option B: Claude Desktop (Bundle)
+▎ The app must stay active while your integration is running. Data streams in real-time from the phone. There's no cloud backend to poll.
 
-1. Install the VytalLink app and connect your health source
-2. Download the Claude Desktop bundle from [vytallink.xmartlabs.com](https://vytallink.xmartlabs.com)
-3. Double-click to install — no CLI needed
-4. Open Claude Desktop, authenticate with your Word + PIN
-5. Query your health data
+### Step 2: Integrate MCP Server
 
-### Option C: MCP Advanced (Developers)
+**MCP Server**
 
-1. Install the VytalLink app and connect your health source
+Best if you're building an AI agent that supports MCP.
 
-2. Install the MCP server:
-   ```bash
-   npm install -g @xmartlabs/vytallink-mcp-server
-   ```
+npm install -g @xmartlabs/vytallink-mcp-server
 
-3. Configure your MCP client:
+Add to your MCP client config:
 
-   **Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
-   ```json
-   {
-     "mcpServers": {
-       "vytalLink": {
-         "command": "npx",
-         "args": ["@xmartlabs/vytallink-mcp-server"]
-       }
-     }
+{
+ "mcpServers": {
+   "vytalLink": {
+     "command": "npx",
+     "args": ["@xmartlabs/vytallink-mcp-server"]
    }
-   ```
+ }
+}
 
-   **VS Code** (`~/.config/Code/User/mcp.json`):
-   ```json
-   {
-     "servers": {
-       "vytalLink": {
-         "command": "npx",
-         "args": ["@xmartlabs/vytallink-mcp-server"]
-       }
-     }
-   }
-   ```
+Restart your client, authenticate with your Word + PIN when prompted, then your AI agent can query health data directly as a tool.
 
-   Also works with **Cursor** and other MCP-compatible clients.
+**REST API / WebSocket**
 
-4. Restart your client and authenticate with your Word + PIN
+Best if you're building your own backend, dashboard, or real-time monitoring feature. See the API docs for endpoints and authentication flow.
 
 ## Practical Example
 
