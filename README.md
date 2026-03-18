@@ -21,7 +21,7 @@ To get the most out of these two sessions, we recommend:
 
 | Tool | What it is | Best For... | Quick Start |
 | :--- | :--- | :--- | :--- |
-| **Vytallink** | Connects your fitness tracker to AI assistants so you can ask questions about your sleep, workouts, and steps. | Let AI assistants read your health info safely, privately, and only when you want them to. | [Link](#vytallink) |
+| **VytalLink** | Mobile app that connects your wearable devices and health apps (Apple Health, Google Fit) to AI assistants like ChatGPT and Claude. | Let AI assistants read your health info safely, privately, and only when you want them to. | [Deep Dive](tools/vytallink/README.md) |
 | **RN SDK** |  |  | [Link](#react-native-sdk) |
 
 ---
@@ -32,9 +32,9 @@ To get the most out of these two sessions, we recommend:
 Vytallink simplifies the chaos of the wearable ecosystem. Instead of building separate integrations for Apple Health, Garmin Connect, Oura, and others, you integrate with Vytallink once and receive standardized data via API or webhooks.
 
 * **Website:** [vytallink.xmartlabs.com](https://vytallink.xmartlabs.com/)
-* **Implementation Guide:** See `examples/vytallink-integration.md`
+* **Implementation Guide:** See [`tools/vytallink`](tools/vytallink)
 
-#### 💡 Use Cases:
+#### 💡 Ideas to get you started:
 
 1.  **Personal Health Insights:**
     Connect wearable data (sleep, heart rate, activity) to an LLM to ask natural language questions like “Why was my sleep worse this week?” or “How does my activity affect my resting heart rate?”
@@ -49,7 +49,7 @@ Vytallink simplifies the chaos of the wearable ecosystem. Instead of building se
 * **Documentation:** See `/examples/rn-sdk/README.md`
 * **Boilerplate App:** Check `/examples/rn-sdk/react-native-starter`
 
-#### 💡 Use Cases:
+#### 💡 Ideas to get you started:
 
 1.  **Custom Adherence Sensor Integration:**
     [TBD]
