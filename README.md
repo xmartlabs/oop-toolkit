@@ -4,11 +4,11 @@ Welcome to the [**Out-of-Pocket: Hardware Edition**](https://www.outofpocket.hea
 
 As a proud sponsor, [**Xmartlabs**](https://xmartlabs.com/) is dedicated to helping teams bridge the gap between innovative health hardware and scalable, compliant software ecosystems. We know that in a hackathon, time is your most scarce resource.
 
-This repository provides OOTB tools and SDKs designed by Xmartlabs to accelerate your development, handling the heavy lifting of device connectivity and data integration so you can focus on solving critical healthcare infrastructure problems.
+This repository provides a set of tools and building blocks designed by Xmartlabs to accelerate your development. They can be combined depending on your use case, handling the heavy lifting of device connectivity and data integration so you can focus on solving critical healthcare infrastructure problems.
 
 ## 🚀 Getting Started
 
-To get the most out of these two sessions, we recommend:
+To get the most out of these resources, we recommend:
 1. **Forking this repo** to your team's organization.
 2. **Reviewing the Tools below** to identify how they fit your project.
 3. **Checking the `examples/` folder** for quick-start scripts and implementation guides.
@@ -17,8 +17,10 @@ To get the most out of these two sessions, we recommend:
 
 | Tool | What it is | Best For... | Quick Start |
 | :--- | :--- | :--- | :--- |
-| **VytalLink** | Mobile app that connects your wearable devices and health apps (Apple Health, Google Fit) to AI assistants like ChatGPT and Claude. | Let AI assistants read your health info safely, privately, and only when you want them to. | [Deep Dive](tools/vytallink/README.md) |
-| **UX & Accessibility Skills** | principles of user experience design combined with foundational accessibility guidelines (e.g., usability, clarity, WCAG basics). | Teams aiming to create equitable experiences for a broad audience. | [Deep Dive](skills/) |
+| **VytalLink Mobile App** | Mobile application that connects wearable data and health information from your device. | Teams that need a fast path to connect health data sources without building each device integration from scratch. | [Deep Dive](tools/vytallink/README.md) |
+| **MCP Interface** | MCP interface that allows AI agents to securely query this data. | AI-powered experiences that need permissioned access to wearable and health data. | [Deep Dive](tools/vytallink/README.md) |
+| **Python Toolkit** | Python toolkit that can be used as a library to integrate these capabilities into your own applications. | Teams building custom backends, automations, or prototypes on top of VytalLink capabilities. | [GitHub Repo](https://github.com/xmartlabs/vytallink-health-kit) |
+| **Reusable Agent Skills** | Reusable agent skills designed following best practices in UX, accessibility, and interaction design. | Teams that want stronger product decisions, better prompts, and more usable healthcare experiences. | [Deep Dive](skills/) |
 
 ## 🔍 Tooling Deep Dive
 
@@ -37,7 +39,7 @@ Vytallink simplifies the chaos of the wearable ecosystem. Instead of building se
 
 ### 🤖 UX & Accessibility Skills
 
-These are **Claude Code skills** — plug-and-play AI assistants you can drop into your project to get expert-level UX, accessibility, and healthcare design guidance without leaving your editor.
+These are **reusable Claude Code skills** — plug-and-play AI assistants you can drop into your project to get expert-level UX, accessibility, and healthcare design guidance without leaving your editor.
 
 > **How to use them:** Copy the `SKILL.md` file from the skill folder into your project and load it into [Claude Code](https://claude.ai/code). The skill will give Claude the knowledge and procedures to assist you at that specific task.
 
