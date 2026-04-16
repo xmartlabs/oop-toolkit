@@ -11,7 +11,7 @@ This repository has tools and building blocks you can combine based on your use 
 | Tool | What it is | Best For... | Quick Start |
 | :--- | :--- | :--- | :--- |
 | **VytalLink** | Mobile app + MCP interface that connects wearable health data to AI agents. Reads from Apple Health and Health Connect; exposes it via MCP. | Teams that need health data in their AI agent without building device integrations from scratch. | [Deep Dive](tools/vytallink/README.md) |
-| **Python Toolkit** | Python toolkit that can be used as a library to integrate these capabilities into your own applications. | Teams building custom backends, automations, or prototypes on top of VytalLink capabilities. | [GitHub Repo](https://github.com/xmartlabs/vytallink-health-kit) |
+| **Python Toolkit** | Python toolkit that can be used as a library to integrate these capabilities into your own applications. | Teams building custom backends, automations, or prototypes on top of VytalLink capabilities. | [Deep Dive](tools/python-toolkit/README.md) |
 | **Reusable Agent Skills** | Reusable agent skills designed following best practices in UX, accessibility, and interaction design. | Teams that want stronger product decisions, better prompts, and more usable healthcare experiences. | [Deep Dive](skills/) |
 
 ## Tooling Deep Dive
@@ -28,6 +28,19 @@ Vytallink simplifies the chaos of the wearable ecosystem. Instead of building se
     Connect wearable data (sleep, heart rate, activity) to an LLM to ask natural language questions like "Why was my sleep worse this week?" or "How does my activity affect my resting heart rate?"
 2.  **Personalized Fitness Coaching:**
     Use natural language to get AI-driven recommendations based on wearable data, such as "What workout should I do today based on my recovery and sleep?" or "Am I improving my cardiovascular fitness?".
+
+### Python Toolkit
+Python Toolkit is the code-first companion to Vytallink. Instead of connecting health data directly into an AI client, it gives you a Python package, CLI, and notebooks you can embed into your own backend, script, or prototype to fetch a health window, normalize the data, and build readiness-style workflows on top.
+
+* **GitHub Repo:** [xmartlabs/vytallink-health-kit](https://github.com/xmartlabs/vytallink-health-kit)
+* **Implementation Guide:** See [`tools/python-toolkit`](tools/python-toolkit)
+
+#### Ideas to get you started:
+
+1.  **Daily Readiness Summaries:**
+    Pull a seven-day window of sleep, resting heart rate, and activity data from Vytallink, compute recovery signals, and generate a markdown or JSON readiness report for your app or dashboard.
+2.  **Custom Data Pipelines and Prototypes:**
+    Use the CLI, notebooks, or library layer to export normalized wearable data, power internal experiments, or add an LLM-driven health narrative without rebuilding metric logic from scratch.
 
 ### UX & Accessibility Skills
 
