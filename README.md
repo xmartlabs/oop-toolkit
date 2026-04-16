@@ -1,47 +1,43 @@
-# 🛠️ Xmartlabs Toolkit | Out-of-Pocket: Hardware Edition
+# Xmartlabs Toolkit | Out-of-Pocket: Hardware Edition
 
-Welcome to the [**Out-of-Pocket: Hardware Edition**](https://www.outofpocket.health/hackathon-hardware-edition) Hackathon!
+Welcome to the [Out-of-Pocket: Hardware Edition](https://www.outofpocket.health/hackathon-hardware-edition) Hackathon!
 
-As a proud sponsor, [**Xmartlabs**](https://xmartlabs.com/) is dedicated to helping teams bridge the gap between innovative health hardware and scalable, compliant software ecosystems. We know that in a hackathon, time is your most scarce resource.
+[Xmartlabs](https://xmartlabs.com/) is sponsoring this event. Hackathons move fast, so we built these tools to cut setup time for teams working with health hardware and software.
 
-This repository provides a set of tools and building blocks designed by Xmartlabs to accelerate your development. They can be combined depending on your use case, handling the heavy lifting of device connectivity and data integration so you can focus on solving critical healthcare infrastructure problems.
+This repository has tools and building blocks you can combine based on your use case. They handle device connectivity and data integration, so you spend less time on plumbing and more time on your product.
 
-## 🚀 Getting Started
-
-To get the most out of these resources, we recommend:
-1. **Forking this repo** to your team's organization.
-2. **Reviewing the Tools below** to identify how they fit your project.
-3. **Checking the `examples/` folder** for quick-start scripts and implementation guides.
-
-## 🧰 Our Toolkit
+## Our Toolkit
 
 | Tool | What it is | Best For... | Quick Start |
 | :--- | :--- | :--- | :--- |
-| **VytalLink Mobile App** | Mobile application that connects wearable data and health information from your device. | Teams that need a fast path to connect health data sources without building each device integration from scratch. | [Deep Dive](tools/vytallink/README.md) |
-| **MCP Interface** | MCP interface that allows AI agents to securely query this data. | AI-powered experiences that need permissioned access to wearable and health data. | [Deep Dive](tools/vytallink/README.md) |
+| **VytalLink** | Mobile app + MCP interface that connects wearable health data to AI agents. Reads from Apple Health and Health Connect; exposes it via MCP. | Teams that need health data in their AI agent without building device integrations from scratch. | [Deep Dive](tools/vytallink/README.md) |
 | **Python Toolkit** | Python toolkit that can be used as a library to integrate these capabilities into your own applications. | Teams building custom backends, automations, or prototypes on top of VytalLink capabilities. | [GitHub Repo](https://github.com/xmartlabs/vytallink-health-kit) |
 | **Reusable Agent Skills** | Reusable agent skills designed following best practices in UX, accessibility, and interaction design. | Teams that want stronger product decisions, better prompts, and more usable healthcare experiences. | [Deep Dive](skills/) |
 
-## 🔍 Tooling Deep Dive
+## Tooling Deep Dive
 
-### ⌚ Vytallink
+### Vytallink
 Vytallink simplifies the chaos of the wearable ecosystem. Instead of building separate integrations for Apple Health, Garmin Connect, Oura, and others, you integrate with Vytallink once and receive standardized data via API or webhooks.
 
 * **Website:** [vytallink.xmartlabs.com](https://vytallink.xmartlabs.com/)
 * **Implementation Guide:** See [`tools/vytallink`](tools/vytallink)
 
-#### 💡 Ideas to get you started:
+#### Ideas to get you started:
 
 1.  **Personal Health Insights:**
     Connect wearable data (sleep, heart rate, activity) to an LLM to ask natural language questions like "Why was my sleep worse this week?" or "How does my activity affect my resting heart rate?"
 2.  **Personalized Fitness Coaching:**
     Use natural language to get AI-driven recommendations based on wearable data, such as "What workout should I do today based on my recovery and sleep?" or "Am I improving my cardiovascular fitness?".
 
-### 🤖 UX & Accessibility Skills
+### UX & Accessibility Skills
 
-These are **reusable Claude Code skills** — plug-and-play AI assistants you can drop into your project to get expert-level UX, accessibility, and healthcare design guidance without leaving your editor.
+These are reusable AI coding skills for Claude Code, Cursor, Windsurf, or any AI-powered coding tool. Install any skill with a single command:
 
-> **How to use them:** Copy the `SKILL.md` file from the skill folder into your project and load it into [Claude Code](https://claude.ai/code). The skill will give Claude the knowledge and procedures to assist you at that specific task.
+```bash
+npx skills add https://github.com/xmartlabs/oop-toolkit/tree/main/skills/<skill-name>
+```
+
+Each skill gives Claude the context and procedures to help with a specific UX, accessibility, or healthcare design task.
 
 | Skill | What it is | When to use it |
 | :--- | :--- | :--- |
@@ -49,7 +45,13 @@ These are **reusable Claude Code skills** — plug-and-play AI assistants you ca
 | **[ux-healthcare](skills/ux-healthcare/SKILL.md)** | Expert UX design guide for healthcare digital products, covering compliance (HIPAA, WCAG, ADA), user types, and 10 healthcare-specific design principles. | Anytime you're designing or reviewing a patient portal, clinical tool, health app, telemedicine platform, or any product used by patients, caregivers, or clinicians. |
 | **[ux-prompt-library](skills/ux-prompt-library/SKILL.md)** | UX/UI prompt assistant using the RACE framework for microcopy, wireframe layout, user flows, and UX research — plus a full Figma Make prompting guide. | When you want better outputs from AI tools: writing microcopy, planning wireframes, mapping user flows, writing usability test scripts, or prototyping in Figma Make. |
 
-## 🆘 Support & Resources
+To install all skills at once:
+
+```bash
+npx skills add https://github.com/xmartlabs/oop-toolkit/tree/main/skills
+```
+
+## Support & Resources
 * **Slack:** Join the `#support-xmartlabs` channel for direct technical support from our engineers.
 * **On-Site Mentors:** Look for the **Xmartlabs** t-shirts on the event floor! We are here to help you debug and architect your solutions.
 * **Xmartlabs Website:** [xmartlabs.com](https://xmartlabs.com/)
